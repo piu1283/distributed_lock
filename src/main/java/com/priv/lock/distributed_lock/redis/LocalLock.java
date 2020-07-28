@@ -76,6 +76,7 @@ public class LocalLock {
                         TimeoutExpendWorker = new TimeoutExpendWorker(lockField, lockKey, lockValue, lockTime,
                                 redisUtil);
                         TimeoutExpendWorkerThread = new Thread(TimeoutExpendWorker);
+                        TimeoutExpendWorkerThread.setDaemon(true);
                         TimeoutExpendWorkerThread.start();
                         LOGGER.info("Create ReEntrantLock successful, lock name [{}]", lockName);
                         return Boolean.TRUE;
