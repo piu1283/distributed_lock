@@ -1,7 +1,6 @@
 package com.priv.lock.distributed_lock.redis;
 
 import com.priv.lock.distributed_lock.redis.manager.LockManager;
-import com.priv.lock.distributed_lock.redis.worker.TimeoutExpendWorker;
 import com.priv.lock.util.RedisUtil;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -17,8 +16,6 @@ import org.springframework.expression.ExpressionParser;
 import org.springframework.expression.spel.standard.SpelExpressionParser;
 import org.springframework.expression.spel.support.StandardEvaluationContext;
 import org.springframework.stereotype.Component;
-
-import java.util.Random;
 
 @Component
 @Aspect
@@ -49,7 +46,7 @@ public class LockAspect {
         }
         Expression exp = parser.parseExpression(la.lockKey());
         String key = exp.getValue(context, String.class);
-        LocalLock lock = manager.getLock(la.lockField(), key);
+        Lock lock = manager.getLock(la.lockField(), key);
         return lock.execute(() -> {
             try {
                 return joinPoint.proceed(args);

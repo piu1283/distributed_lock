@@ -8,9 +8,9 @@ import org.slf4j.LoggerFactory;
 import java.util.UUID;
 import java.util.function.Supplier;
 
-public class LocalLock {
+public class Lock {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(LocalLock.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(Lock.class);
     private volatile int status;
     private RedisUtil redisUtil;
     private int lockTime = 30;
@@ -54,7 +54,7 @@ public class LocalLock {
         TimeoutExpendWorkerThread = timeoutExpendWorkerThread;
     }
 
-    public LocalLock(RedisUtil redisUtil, String lockField, String lockKey) {
+    public Lock(RedisUtil redisUtil, String lockField, String lockKey) {
         this.status = 0;
         this.redisUtil = redisUtil;
         this.lockField = lockField;
