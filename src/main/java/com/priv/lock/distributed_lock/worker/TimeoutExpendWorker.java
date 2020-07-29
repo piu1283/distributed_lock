@@ -1,4 +1,4 @@
-package com.priv.lock.distributed_lock.redis.worker;
+package com.priv.lock.distributed_lock.worker;
 
 import com.priv.lock.util.RedisUtil;
 import org.slf4j.Logger;

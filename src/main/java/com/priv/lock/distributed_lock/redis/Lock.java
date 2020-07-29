@@ -1,6 +1,6 @@
 package com.priv.lock.distributed_lock.redis;
 
-import com.priv.lock.distributed_lock.redis.worker.TimeoutExpendWorker;
+import com.priv.lock.distributed_lock.worker.TimeoutExpendWorker;
 import com.priv.lock.util.RedisUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +22,7 @@ public class Lock {
     private Thread lockOwnerThread;
     private String lockName;
 
-    public com.priv.lock.distributed_lock.redis.worker.TimeoutExpendWorker getTimeoutExpendWorker() {
+    public com.priv.lock.distributed_lock.worker.TimeoutExpendWorker getTimeoutExpendWorker() {
         return TimeoutExpendWorker;
     }
 
@@ -46,7 +46,7 @@ public class Lock {
         this.lockOwnerThread = lockOwnerThread;
     }
 
-    public void setTimeoutExpendWorker(com.priv.lock.distributed_lock.redis.worker.TimeoutExpendWorker timeoutExpendWorker) {
+    public void setTimeoutExpendWorker(com.priv.lock.distributed_lock.worker.TimeoutExpendWorker timeoutExpendWorker) {
         TimeoutExpendWorker = timeoutExpendWorker;
     }
 

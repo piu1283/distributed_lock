@@ -15,7 +15,7 @@ This is a Distributed lock based on Redis.
     Or you can use it in the method, the code will be like `LockAspect.class`.
 - Using Lua script for executing batch of redis operations atomically.
 - Using Daemon Thread to reset the expire time of lock key periodically in redis to make sure there will be only one thread hold the lock at same time.
-- Using the logic of Java ReentrantLock to make this distributed lock reentantable.
+- Using the logic of Java ReentrantLock to make this distributed lock reenterable.
 
 ### Future optimizations
 - Can use the pub/sub of redis to let the thread try less time when it is waiting for the lock, which can largely enhance the performance.

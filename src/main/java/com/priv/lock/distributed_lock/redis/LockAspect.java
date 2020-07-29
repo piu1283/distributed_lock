@@ -1,6 +1,6 @@
 package com.priv.lock.distributed_lock.redis;
 
-import com.priv.lock.distributed_lock.redis.manager.LockManager;
+import com.priv.lock.distributed_lock.manager.LockManager;
 import com.priv.lock.util.RedisUtil;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;

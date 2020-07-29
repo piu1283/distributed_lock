@@ -1,4 +1,4 @@
-package com.priv.lock.distributed_lock.redis.manager;
+package com.priv.lock.distributed_lock.manager;
 
 import com.priv.lock.distributed_lock.redis.Lock;
 import com.priv.lock.util.RedisUtil;

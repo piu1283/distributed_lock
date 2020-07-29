@@ -1,7 +1,7 @@
 package com.priv.lock;
 
-import com.priv.lock.distributed_lock.redis.service.AddingService;
-import com.priv.lock.distributed_lock.redis.worker.AddingWorker;
+import com.priv.lock.distributed_lock.service.AddingService;
+import com.priv.lock.distributed_lock.worker.AddingWorker;
 import com.priv.lock.util.RedisUtil;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

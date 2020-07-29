@@ -1,6 +1,6 @@
-package com.priv.lock.distributed_lock.redis.worker;
+package com.priv.lock.distributed_lock.worker;
 
-import com.priv.lock.distributed_lock.redis.service.AddingService;
+import com.priv.lock.distributed_lock.service.AddingService;
 
 public class AddingWorker implements Runnable {
 
